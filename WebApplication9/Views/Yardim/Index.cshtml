@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+<br />
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Modal1">
+    Hakkında
+</button>
+
+<div class="modal" id="Modal1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">
+                    Hakkında
+                </h2>
+            </div>
+            <form >
+                <div class="modal-body">
+                    <h3>Projeyi Hakkında</h3>
+                    <p>Bu proje 2023 tarihinde mehmet kılıcer tarafından yapılmıstır.</p>
+                    <br />
+                    <img src="~/mhmt.jpeg" alt="Proje Fotoğrafı " class="img-fluid">
+
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

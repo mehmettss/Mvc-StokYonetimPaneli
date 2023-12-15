@@ -1,0 +1,24 @@
+﻿@model WebApplication9.Models.Entity.TBLMUSTERILER
+@{
+    ViewBag.Title = "Yenimusteri";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<form method="post">
+    <div>
+        <label>Musteri ad</label>
+        @Html.TextBoxFor(m => m.MUSTERIAD, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.MUSTERIAD, "", new { @style = "color:red" })
+      
+    </div>
+    <div>
+        <label>Musteri soyad</label>
+        <input type="text" name="MUSTERISOYAD" class="form-control" />
+    </div>
+    <div style="margin-top:10px">
+        <button class="btn btn-info">Musteri Ekle</button>
+    </div>
+
+
+</form>
+

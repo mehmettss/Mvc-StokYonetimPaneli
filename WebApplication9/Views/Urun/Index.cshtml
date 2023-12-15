@@ -1,0 +1,61 @@
+﻿
+@using WebApplication9.Models.Entity
+
+@model List<TBLURUNLER>
+
+
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<table id="tbl1" class="table table-bordered">
+    <thead>
+        <tr>
+            <th>URUN ID</th>
+            <th>KATEGORI ADI</th>
+            <th>MARKASI</th>
+            <th>KATEGORI</th>
+            <th>FİYAT</th>
+            <th>STOK</th>
+            <th>SİL</th>
+            <th>GUNCELLE</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var urn in Model)
+        {
+            <tr>
+                <th>
+                    @urn.ID
+                </th>
+                <td>
+                    @urn.URUNAD
+                </td>
+                <td>
+                    @urn.MARKA
+                </td>
+                <td>
+                    @urn.TBLKATEGORILER.KATEGORIAD
+                </td>
+                <td>
+                    @urn.FIYAT
+                </td>
+                <td>
+                    @urn.STOK
+                </td>
+                <td><a href="/Urun/Sil/@urn.ID" class="btn btn-danger">SİL</a></td>
+                <td><a href="/Urun/Urungetir/@urn.ID" class="btn btn-success">GUNCELLE</a></td>
+            </tr>
+        }
+</table>
+<a href="/Urun/Yeniurun/" class="btn btn-primary">YENİ URUN EKLE</a>
+<link href="~/Content/DataTables/css/dataTables.bootstrap4.css" rel="stylesheet" />
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+
+<script>
+    $('#tbl1').DataTable();
+</script>
+
+
